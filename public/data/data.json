@@ -1,65 +1,42 @@
 {
   "boards": [
     {
-      "name": "NEWBOARD",
+      "name": "new_board",
       "user": 0,
-      "id": 69950938498,
+      "id": 25890631552,
+      "starred": false,
+      "created": "2022-11-29"
+    },
+    {
+      "name": "new_board",
+      "user": 0,
+      "id": 39476701249,
+      "starred": false,
+      "created": "2022-11-29"
+    },
+    {
+      "name": "new_board",
+      "user": 0,
+      "id": 71400393356,
+      "starred": false,
+      "created": "2022-11-29"
+    },
+    {
+      "name": "new_board",
+      "user": 0,
+      "id": 13951260357,
+      "starred": false,
+      "created": "2022-11-29"
+    },
+    {
+      "name": "new_board",
+      "user": 0,
+      "id": 18056364316,
       "starred": false,
       "created": "2022-11-29"
     }
   ],
-  "tasks": [
-    {
-      "boardId": 69950938498,
-      "description": "",
-      "completed": false,
-      "listId": 11163878548,
-      "title": "1",
-      "id": 75618564484,
-      "created": "2022-11-29",
-      "deadline": "2022-12-02"
-    },
-    {
-      "boardId": 69950938498,
-      "description": "",
-      "completed": false,
-      "listId": 11163878548,
-      "title": "2",
-      "id": 32910496292,
-      "created": "2022-11-29",
-      "deadline": "2022-12-02"
-    },
-    {
-      "boardId": 69950938498,
-      "description": "",
-      "completed": true,
-      "listId": 11163878548,
-      "title": "3",
-      "id": 77955511887,
-      "created": "2022-11-29",
-      "deadline": "2022-12-02"
-    },
-    {
-      "boardId": 69950938498,
-      "description": "",
-      "completed": false,
-      "listId": 11163878548,
-      "title": "4",
-      "id": 47168587699,
-      "created": "2022-11-29",
-      "deadline": "2022-12-02"
-    },
-    {
-      "boardId": 69950938498,
-      "description": "",
-      "completed": false,
-      "listId": 11163878548,
-      "title": "5",
-      "id": 64480668702,
-      "created": "2022-11-29",
-      "deadline": "2022-12-02"
-    }
-  ],
+  "tasks": [],
   "users": [
     {
       "email": "lukas@lukas.sk",
@@ -79,9 +56,21 @@
   ],
   "lists": [
     {
-      "boardId": 69950938498,
-      "title": "NEWLIST",
-      "id": 11163878548,
+      "boardId": 25890631552,
+      "title": "new_list",
+      "id": 2716834290,
+      "created": "2022-11-29"
+    },
+    {
+      "boardId": 39476701249,
+      "title": "new_list",
+      "id": 65315102636,
+      "created": "2022-11-29"
+    },
+    {
+      "boardId": 13951260357,
+      "title": "new_list",
+      "id": 19117136793,
       "created": "2022-11-29"
     }
   ]
