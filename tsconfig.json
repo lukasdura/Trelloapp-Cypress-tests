@@ -8,5 +8,5 @@
   },
   "include": [
     "**/*.ts"
-  ]
+, "cypress/e2e/Loginpage.js", "cypress/support/commands.js"  ]
 }
