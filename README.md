@@ -1,13 +1,19 @@
-a simple trello clone application built on vue and json-server. The point of this app is to be super easy to install and run, so that you don’t need to set up complicated database and have several scripts running in order to open app. Just install, write npm start and you are good to go.
+This app is copied from Filip Hric. You can find the app on this link : https://github.com/filiphric/trelloapp.git
 
-The original version of this app was built by Zack Thoutt and [you can find it here](https://github.com/zackthoutt/vue-trello). I updated the app to vue 2 and am using json-server and axios instead of local storage to handle data. I also implemented a simple JWT authentication by utilizing json-server-auth. You can also upload images to tasks, files are saved to your drive. 
+For first you run **npm install**, after instaling you only open the app with **npm start**
 
-I’m pretty happy with the result, although I have to say, that I am no Vue expert. I learn by copying the work of others, code from stackoverflow, documentation(s) and then try to use that knowledge and code to make something on my own. I bet you could find some antipatterns in the code and you are more than welcome to create an issue with a suggestion. I made this app for a workshop I’m am doing on testing in Cypress.io. If you are intereseted how that looks, check out my [quick course on Udemy](https://www.udemy.com/course/cypress-test-automation-for-people-in-a-hurry/?couponCode=D7F5FD6D19C9A5FF823D) (link with a discount coupon, cause you’re nice), although I’m using another app there. Maybe next time.
+My tests are in ***Trelloapp-Cypress-tests/cypress/e2e/***
 
-Oh and the installation
-`npm install`
-`npm start`
+Tests are divided to two sections ***Long_tests***   and   ***Short_example_tests***
 
-That should do it. If you update the code, use `npx grunt dev` to build the app again.
+**Long_tests** are mostly API tests and they are relatively long because of character of this app. (by writing some tests, you reset the application and other tests fail for this reason, so it is quite often necessary to start the tests from the beginning) 
 
-I’ll do a better readme file, I swear. I’m just a little busy now.
+**Short_example_tests** are simple tests written mostly for testing UI and basic functions of the application
+
+In section Actions is set CI via GitHub actions.
+
+
+
+
+
+
