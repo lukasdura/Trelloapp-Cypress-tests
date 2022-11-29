@@ -1,4 +1,6 @@
-const lists = [
+/// <reference types="cypress" />
+
+  const lists = [
     {
       names:'karol',
       tasks:['1','2', '3'],
@@ -12,17 +14,21 @@ const lists = [
       names:'jano',
       tasks:['1'],
     }]
+
+    lists.forEach ((list, index)=> {
     
-     lists.forEach ((list, index)=> {
-    
-    it('skontrolovat${list, name}',()=>{
-    
-    
-       cy.visit('/board/29000904550')
-    
+    it('Check${list, name}',()=>{
+      cy.visit('/board/38623903260')
         cy.get('.List')
          .eq(index)
           .find('.Task')
            .should('have.length', list.tasks.length) 
-    })
-    })
+    
+  })
+  })
+   
+   
+
+
+
+

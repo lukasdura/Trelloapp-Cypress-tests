@@ -1,14 +1,65 @@
 {
   "boards": [
     {
-      "name": "HTTP-BOARD",
+      "name": "NEWBOARD",
       "user": 0,
-      "id": 31511850625,
+      "id": 69950938498,
       "starred": false,
-      "created": "2022-11-28"
+      "created": "2022-11-29"
     }
   ],
-  "tasks": [],
+  "tasks": [
+    {
+      "boardId": 69950938498,
+      "description": "",
+      "completed": false,
+      "listId": 11163878548,
+      "title": "1",
+      "id": 75618564484,
+      "created": "2022-11-29",
+      "deadline": "2022-12-02"
+    },
+    {
+      "boardId": 69950938498,
+      "description": "",
+      "completed": false,
+      "listId": 11163878548,
+      "title": "2",
+      "id": 32910496292,
+      "created": "2022-11-29",
+      "deadline": "2022-12-02"
+    },
+    {
+      "boardId": 69950938498,
+      "description": "",
+      "completed": true,
+      "listId": 11163878548,
+      "title": "3",
+      "id": 77955511887,
+      "created": "2022-11-29",
+      "deadline": "2022-12-02"
+    },
+    {
+      "boardId": 69950938498,
+      "description": "",
+      "completed": false,
+      "listId": 11163878548,
+      "title": "4",
+      "id": 47168587699,
+      "created": "2022-11-29",
+      "deadline": "2022-12-02"
+    },
+    {
+      "boardId": 69950938498,
+      "description": "",
+      "completed": false,
+      "listId": 11163878548,
+      "title": "5",
+      "id": 64480668702,
+      "created": "2022-11-29",
+      "deadline": "2022-12-02"
+    }
+  ],
   "users": [
     {
       "email": "lukas@lukas.sk",
@@ -26,5 +77,12 @@
       "id": 3
     }
   ],
-  "lists": []
+  "lists": [
+    {
+      "boardId": 69950938498,
+      "title": "NEWLIST",
+      "id": 11163878548,
+      "created": "2022-11-29"
+    }
+  ]
 }
