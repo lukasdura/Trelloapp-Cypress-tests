@@ -1,18 +1,246 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.6 on linux)" generated="20221128 11:20:33.471" rpa="false" schemaversion="3">
-<suite id="s1" name="First Test" source="/home/lukas/Plocha/PROJECTS/TRELLO PROJECT/trelloapp/ROBOT_FRAMEWORK_TESTS/first_test.robot">
-<test id="s1-t1" name="Try to open page" line="14">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221128 11:20:33.647" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000'.</msg>
-<status status="PASS" starttime="20221128 11:20:33.646" endtime="20221128 11:20:34.915"/>
+<robot generator="Robot 5.0.1 (Python 3.10.6 on linux)" generated="20221129 12:35:09.214" rpa="false" schemaversion="3">
+<suite id="s1" name="GET API" source="/home/lukas/Plocha/PROJECTS/TRELLO PROJECT/trelloapp/robot/GET_API.robot">
+<test id="s1-t1" name="GET REQUEST ALL POST" line="13">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${URL}/api/lists</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20221129 12:35:09.284" level="INFO">GET Request : url=http://localhost:3000//api/lists 
+ path_url=//api/lists 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221129 12:35:09.286" level="INFO">GET Response : url=http://localhost:3000//api/lists 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Accept-Ranges': 'bytes', 'Cache-Control': 'public, max-age=0', 'Last-Modified': 'Mon, 28 Nov 2022 07:41:33 GMT', 'ETag': 'W/"5304-184bd2f213a"', 'Content-Type': 'text/html; charset=UTF-8', 'Content-Encoding': 'gzip', 'Date': 'Tue, 29 Nov 2022 11:35:09 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5', 'Transfer-Encoding': 'chunked'} 
+ body=&lt;!doctype html&gt;
+
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+  &lt;base href="http://localhost:3000" /&gt;
+	&lt;link rel="apple-touch-icon" sizes="72x72" href="public/images/logo.png"&gt;
+	&lt;link rel="apple-touch-icon" sizes="114x114" href="public/images/logo.png"&gt;
+	&lt;link rel="apple-touch-icon" sizes="144x144" href="public/images/logo.png"&gt;
+	&lt;link rel="shortcut icon" type="image/png" href="public/images/logo.png"&gt;
+
+	&lt;title&gt;Trello&lt;/title&gt;
+	&lt;meta name="author" content="Filip Hric"&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;link href='https://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'&gt;
+  &lt;link rel="stylesheet" type="text/css" href="public/css/trello.css"&gt;
+  &lt;style&gt;
+    [v-cloak] {
+      display: none;
+    }
+  &lt;/style&gt;
+
+  &lt;!-- &lt;script src="node_modules/sockets.io-client/dist/socket.io.js"&gt;&lt;/script&gt; --&gt;
+
+&lt;/head&gt;
+
+&lt;template id="trello-board"&gt;
+	&lt;div class="background background-blue"&gt;
+    &lt;div class="loading" v-show="loading"&gt;
+      &lt;svg width="16" height="16" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#fff" style="margin-bottom: -2px;"&gt;
+        &lt;g fill="none" fill-rule="evenodd"&gt;
+            &lt;g transform="translate(1 1)" stroke-width="2"&gt;
+                &lt;circle stroke-opacity=".5" cx="18" cy="18" r="18"/&gt;
+                &lt;path d="M36 18c0-9.94-8.06-18-18-18"&gt;
+                    &lt;animateTransform
+                        attributeName="transform"
+                        type="rotate"
+                        from="0 18 18"
+                        to="360 18 18"
+                        dur="1s"
+                        repeatCount="indefinite"/&gt;
+                &lt;/path&gt;
+            &lt;/g&gt;
+        &lt;/g&gt;
+    &lt;/svg&gt;&amp;nbsp;&amp;nbsp;Loading data ...&lt;/div&gt;
+		&lt;div class="background_spacer"&gt;&lt;/div&gt;
+		&lt;div class="boardDetail"&gt;
+			&lt;div
+				class="Overlay"
+				v-on:click.self="showTaskModule = false; taskDropdown = false; closeTask()"
+				v-show="showTaskModule"
+			&gt;
+				&lt;div class="TaskModule" data-cy="task-module"&gt;
+					&lt;div class="TaskModule_exit"&gt;
+            &lt;div data-cy="task-module-close" class="dropdown" @click="taskDropdown = !taskDropdown"&gt;
+              &lt;svg class="options" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;&lt;path d="M12,7a2,2,0,1,0-2-2A2,2,0,0,0,12,7Zm0,10a2,2,0,1,0,2,2A2,2,0,0,0,12,17Zm0-7a2,2,0,1,0,2,2A2,2,0,0,0,12,10Z"/&gt;&lt;/svg&gt;
+              &lt;div id="myDropdown" data-cy="task-dropdown" class="dropdown-content" :class="{ show: taskDropdown }"&gt;
+                &lt;span v-on:click="showTaskModule = false; closeTask()"&gt;Close task&lt;/span&gt;
+                &lt;span data-cy="copy-task-properties" @click.self="copyProperties(currentTask)"&gt;Copy properties&lt;/span&gt;
+                &lt;span class="delete" @click="deleteTask(currentTask)"&gt;Delete task&lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div
+            class="invisible-overlay"
+            @click.self="taskDropdown = false"
+            v-show="taskDropdown"
+            v-cloak
+            &gt;
+            &lt;/div&gt;
+					&lt;/div&gt;
+					&lt;input
+            class="Input TaskModule_title"
+            data-cy="task-module-name"
+            v-model.lazy="currentTask.title"
+            @change="updateTaskName(currentTask)"
+            v-on:keyup.enter="$event.target.blur()"
+						type="text"
+					&gt;&lt;/input&gt;
+					&lt;h5 class="TaskModule_list"&gt;in list &lt;strong&gt;{{ currentList.title }}&lt;/strong&gt;&lt;/h5&gt;
+					&lt;h6 class="TaskModule_descriptionTitle"&gt;Description&lt;/h6&gt;
+					&lt;p
+            class="TaskModule_description"
+						v-if="currentTask.description"
+						v-show="!editTaskDescription"
+						v-on:click="editTaskDescription = !editTaskDescription"
+					&gt;
+						{{ currentTask.description }}
+					&lt;/p&gt;
+					&lt;p
+            class="TaskModule_description"
+            data-cy="task-description"
+						v-else
+						v-on:click="editTaskDescription = !editTaskDescription"
+						v-show="!editTaskDescription"
+					&gt;
+						Add a description...
+					&lt;/p&gt;
+					&lt;textarea
+            class="TextArea"
+            data-cy="task-description-input"
+						v-model="currentTask.description"
+						v-show="editTaskDescription"
+						type="text"
+						v-focus="editTaskDescription"
+						v-on:keydown.enter.prevent="saveNewTaskDescription"
+					&gt;&lt;/textarea&gt;
+					&lt;div
+						class="TaskModule_options"
+						v-show="editTaskDescription"
+					&gt;
+						&lt;button
+              class="Button"
+              data-cy="task-description-save"
+							v-on:click="saveNewTaskDescription(currentTask)"
+						&gt;
+							Save
+						&lt;/button&gt;
+						&lt;svg
+							class="Cancel"
+							v-on:click="editTaskDescription = !editTaskDescription"
+						&gt;
+							&lt;line x1="0" y1="0" x2="15" y2="15"/&gt;
+							&lt;line x1="0" y1="15" x2="15" y2="0"/&gt;
+						&lt;/svg&gt;
+          &lt;/div&gt;
+          &lt;h6 class="TaskModule_descriptionTitle"&gt;Due date&lt;/h6&gt;
+          &lt;input type="date" data-cy="task-deadline" :class="overdue(currentTask)" placeholder="yyyy-mm-dd" min="1997-01-01" max="2030-12-31" v-model="currentTask.deadline" @change="saveNewTaskDeadline(currentTask)"&gt;
+          &lt;div v-show="currentTask.image"&gt;
+            &lt;h6 class="TaskModule_descriptionTitle"&gt;Image&lt;/h6&gt;
+            &lt;div class="imagePreview"&gt;
+                &lt;svg
+                  class="Cancel"
+                  data-cy="remove-image"
+                  v-on:click="removeImage()"
+                &gt;
+                &lt;line x1="0" y1="0" x2="15" y2="15"/&gt;
+                &lt;line x1="0" y1="15" x2="15" y2="0"/&gt;
+              &lt;img :src="currentTask.image"&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div v-show="!currentTask.image"&gt;
+            &lt;h6 class="TaskModule_descriptionTitle" v-show="!currentTask.image"&gt;Upload image&lt;/h6&gt;
+            &lt;vue-dropzone
+            ref="myVueDropzone"
+            v-show="!currentTask.image"
+            :id="'dropzone' + currentTask.id"
+            :options="dropzoneOptions"
+            :destroy-dropzone=true
+            :use-custom-slot=true
+            @vdropzone-sending="addImageId"
+            @vdropzone-success="fileUploaded"
+            &gt;
+              &lt;div class="dropzone-custom-content"&gt;
+                &lt;svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;&lt;path d="M19,13a1,1,0,0,0-1,1v.38L16.52,12.9a2.79,2.79,0,0,0-3.93,0l-.7.7L9.41,11.12a2.85,2.85,0,0,0-3.93,0L4,12.6V7A1,1,0,0,1,5,6h7a1,1,0,0,0,0-2H5A3,3,0,0,0,2,7V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V14A1,1,0,0,0,19,13ZM5,20a1,1,0,0,1-1-1V15.43l2.9-2.9a.79.79,0,0,1,1.09,0l3.17,3.17,0,0L15.46,20Zm13-1a.89.89,0,0,1-.18.53L13.31,15l.7-.7a.77.77,0,0,1,1.1,0L18,17.21ZM22.71,4.29l-3-3a1,1,0,0,0-.33-.21,1,1,0,0,0-.76,0,1,1,0,0,0-.33.21l-3,3a1,1,0,0,0,1.42,1.42L18,4.41V10a1,1,0,0,0,2,0V4.41l1.29,1.3a1,1,0,0,0,1.42,0A1,1,0,0,0,22.71,4.29Z"/&gt;&lt;/svg&gt;
+                &lt;p&gt;Drop file here or click to upload&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/vue-dropzone&gt;
+          &lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+			&lt;div class="boardDetail_info"&gt;
+        &lt;input class="boardDetail_title" data-cy="board-title" v-model.lazy="currentBoard.name" @change="updateBoardName()" v-on:keyup.enter="$event.target.blur()"&gt;&lt;/input&gt;
+        &lt;div class="dropdown" data-cy="board-options" @click="boardDropdown = !boardDropdown"&gt;
+          &lt;svg class="options" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;&lt;path d="M12,7a2,2,0,1,0-2-2A2,2,0,0,0,12,7Zm0,10a2,2,0,1,0,2,2A2,2,0,0,0,12,17Zm0-7a2,2,0,1,0,2,2A2,2,0,0,0,12,10Z"/&gt;&lt;/svg&gt;
+          &lt;div id="myDropdown" class="dropdown-content" v-show="boardDropdown"&gt;
+            &lt;span class="delete" @click.self="deleteBoard(currentBoard)"&gt;Delete board&lt;/span&gt;
+            &lt;span data-cy="copy-board-properties" @click.self="copyProperties(currentBoard)"&gt;Copy properties&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div
+        class="invisible-overlay"
+        @click.self="boardDropdown = false"
+        v-show="boardDropdown"
+        v-cloak
+        &gt;
+        &lt;/div&gt;
+			&lt;/div&gt;
+			&lt;draggable class="ListContainer" :list="currentBoard.lists" animation="150" group="lists" @end="sortList"&gt;
+        &lt;div class="List" data-cy="list" v-for="(list, index) in currentBoard.lists" :data-id="list.id" :key="list.id"&gt;
+          &lt;input class="Input taskTitle" data-cy="list-name" v-model.lazy="list.title" @change="updateListName(list)" v-on:keyup.enter="$event.target.blur()"&gt;&lt;/input&gt;
+          &lt;div class="dropdown" @click="listDropdown = index"&gt;
+            &lt;svg class="options" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;&lt;path d="M12,7a2,2,0,1,0-2-2A2,2,0,0,0,12,7Zm0,10a2,2,0,1,0,2,2A2,2,0,0,0,12,17Zm0-7a2,2,0,1,0,2,2A2,2,0,0,0,12,10Z"/&gt;&lt;/svg&gt;
+            &lt;div id="myDropdown" class="dropdown-content" v-show="listDropdown === index"&gt;
+              &lt;span class="delete" @click.self="deleteList(list); listDropdown = false"&gt;Delete list&lt;/span&gt;
+              &lt;span data-cy="copy-list-properties" @click.self="copyProperties(list)"&gt;Copy properties&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div
+          class="invisible-overlay"
+          @click.self="listDropdown = false"
+          v-show="listDropdown === index"
+          v-cloak
+          &gt;
+          &lt;/div&gt;
+					&lt;draggable class="List_tasks" data-cy="tasks-list" :list="currentLists[list.id]" animation="150" group="{ name: 'tasksList' + index}" @end="sortTask($event, list)" &gt;
+            &lt;div class="Task" data-cy="task" v-for="task in currentLists[list.id]" :key="task.id"
+              v-on:click.self="editTask(list, task)" :class="overdue(task)"&gt;
+              &lt;div class="container"&gt;
+                &lt;input type="checkbox" data-cy="task-done" class="checkmark" v-model="task.completed" v-on:change="completeTask(task)"&gt;
+                &lt;label class="Task_title" data-cy="task-title" :class="{ completed: task.completed }"&gt;{{task.title}}&lt;/label&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+					&lt;/draggable&gt;
+					&lt;h5
+            class="List_addTask"
+            data-cy="new-task"
+						v-show="newTaskInputActive !== list.id"
+						v-on:click.stop.prevent="newTaskInputActive = list.id"
+					&gt;
+						Add new task
+					&lt;/h5&gt;
+					&lt;textarea class="TextArea" data-cy="task-input" v-model="newTaskTitle" type="text" v-on:keydown.enter.prevent="addTask(list)" data-... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20221129 12:35:09.286" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221129 12:35:09.278" endtime="20221129 12:35:09.286"/>
 </kw>
-<status status="PASS" starttime="20221128 11:20:33.645" endtime="20221128 11:20:34.916"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>ID:${response}</arg>
+<arg>Title:${response}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 12:35:09.287" endtime="20221129 12:35:09.287"/>
+</kw>
+<status status="PASS" starttime="20221129 12:35:09.277" endtime="20221129 12:35:09.288"/>
 </test>
-<doc>my first test</doc>
-<status status="PASS" starttime="20221128 11:20:33.475" endtime="20221128 11:20:34.918"/>
+<doc>API testing</doc>
+<status status="PASS" starttime="20221129 12:35:09.217" endtime="20221129 12:35:09.288"/>
 </suite>
 <statistics>
 <total>
@@ -21,7 +249,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="First Test">First Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="GET API">GET API</stat>
 </suite>
 </statistics>
 <errors>

@@ -1,21 +1,30 @@
 {
   "boards": [
     {
-      "name": "TEST_board",
+      "name": "HTTP-BOARD",
       "user": 0,
-      "id": 65268860281,
+      "id": 31511850625,
       "starred": false,
       "created": "2022-11-28"
     }
   ],
   "tasks": [],
-  "users": [],
-  "lists": [
+  "users": [
     {
-      "title": "TEST_list",
-      "boardId": 65268860281,
-      "id": 58802990573,
-      "created": "2022-11-28"
+      "email": "lukas@lukas.sk",
+      "password": "$2a$10$ppRvf2TT5.FF13M8TE8AWedpGBCuW5m7luoqemd.cASfjr0Ao9cHG",
+      "id": 1
+    },
+    {
+      "email": "lukas1@lukas.sk",
+      "password": "$2a$10$vNePk3migqy2Vo5sIaPPGOjfHBd7.zTt6g7P9U2D/qWAu/xEk5RM2",
+      "id": 2
+    },
+    {
+      "email": "lukas2@lukas.sk",
+      "password": "$2a$10$fVy0klLGGRvGS3KbaZhGYeMkMMDPE4I9ACS3sZR5alJtrAdXC4fb.",
+      "id": 3
     }
-  ]
+  ],
+  "lists": []
 }
