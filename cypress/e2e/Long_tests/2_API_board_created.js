@@ -1,13 +1,16 @@
 /// <reference types="cypress" />
 
+const board= 'HTTP-BOARD'
+
 beforeEach( () => {
+
 
     
     cy.request('DELETE', '/api/boards')
   
      cy.request('POST', '/api/boards',{
   
-        name:'HTTP-BOARD'
+        name: board
  })
  })
   
@@ -16,7 +19,7 @@ beforeEach( () => {
     cy
       .visit('/')
         cy.get('.board_title')
-         .should('contain.text', 'HTTP-BOARD')
+         .should('contain.text', board)
   
   
       cy.get('.board')

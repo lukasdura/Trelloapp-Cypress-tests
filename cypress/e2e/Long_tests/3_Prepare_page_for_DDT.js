@@ -16,7 +16,7 @@ it('Prepare page for the next test case "DATA DRIVEN TESTING"',()=>{
    
    
     cy.get('.board_newItem')
-    .click()
+    .click()newboard
     
     cy.get('.board_addBoard')
      .click()
@@ -34,57 +34,53 @@ it('Prepare page for the next test case "DATA DRIVEN TESTING"',()=>{
     })
 
     cy.get('.List_addTask')
-    .eq(0)
-    .click()
+     .eq(0)
+      .click()
 
     cy.get('[data-id="newTaskTitle"]')
      .eq(0)
       .type('1{enter}')
 
     cy.get('.List_addTask')
-    .eq(0)
-    .click()
+     .eq(0)
+      .click()
 
     cy.get('[data-id="newTaskTitle"]')
-    .eq(0)
-    .type('2{enter}')
+     .eq(0)
+      .type('2{enter}')
 
     cy.get('.List_addTask')
-    .eq(0)
-    .click()
-
+     .eq(0)
+      .click()
+  
     cy.get('[data-id="newTaskTitle"]')
-    .eq(0)
-    .type('3{enter}')
+     .eq(0)
+      .type('3{enter}')
 
 
 
     cy.get('.List_addTask')
-    .eq(1)
-    .click()
+     .eq(1)
+      .click()
 
     cy.get('[data-id="newTaskTitle"]')
      .eq(1)
       .type('1{enter}')
 
     cy.get('.List_addTask')
-    .eq(1)
-    .click()
+     .eq(1)
+      .click()
 
     cy.get('[data-id="newTaskTitle"]')
-    .eq(1)
-    .type('2{enter}')
+     .eq(1)
+      .type('2{enter}')
 
     cy.get('.List_addTask')
-    .eq(2)
-    .click()
+     .eq(2)
+      .click()
 
     cy.get('[data-id="newTaskTitle"]')
      .eq(2)
       .type('1{enter}')
 
-    
-    
-   
-
-})
+    })

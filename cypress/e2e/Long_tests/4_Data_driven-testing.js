@@ -18,7 +18,7 @@
     lists.forEach ((list, index)=> {
     
     it('Check${list, name}',()=>{
-      cy.visit('/board/38623903260')
+      cy.visit('/board/12624417580')
         cy.get('.List')
          .eq(index)
           .find('.Task')

@@ -1,3 +1,11 @@
+
+
+ const board = 'NEWBOARD'
+ const list  = 'NEWLIST'
+ const tasks  = ['NEWTASK', 'NEWTASK1']
+
+
+
 beforeEach(()=>{
 
     cy.request('DELETE', '/api/boards')
@@ -17,29 +25,29 @@ beforeEach(()=>{
      .click()
      
      cy.get('.board_addBoard')
-     .click()
-     .type('newboard{enter}')
-     cy.get('.CreateList_title')
-     .click( )
+      .click()
+       .type(board)
+        .type('{enter}')
+          cy.get('.CreateList_title')
+           .click( )
  
      cy.get('.CreateList_input')
-     .click()
-     .type('newlist{enter}')
+      .click()
+       .type(list)
+        .type('{enter}')
  
      //create two task//
-     cy.get('.List_addTask')
-     .click()
- 
+     
+     tasks.forEach(task=>{
+      cy.get('.List_addTask')
+       .click()
+
      cy.get('[data-id="newTaskTitle"]')
-     .type('newtask{enter}')
+      .type(task)
+       .type('{enter}')
  
  
-     cy.get('.List_addTask')
-     .click()
- 
-     cy.get('[data-id="newTaskTitle"]')
-     .type('newtask1{enter}')
-    
+     })
      //check task//
  
  
@@ -61,7 +69,7 @@ beforeEach(()=>{
      //checking the name of board//
  
      cy.get('.boardDetail_title')
-     .should('have.value', 'newboard')
+     .should('have.value', board)
      
       })
  
