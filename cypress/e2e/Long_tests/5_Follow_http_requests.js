@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+describe('Create task and follow  the request', ()=>{
+
 beforeEach( () => {
    
     cy.request('DELETE','/api/boards')
@@ -56,10 +58,6 @@ it('Create task and follow  the request',()=>{
       expect(marking.response.body.completed).to.eq(true )
     
 })
-
-
-
-
-
+})
 })
 

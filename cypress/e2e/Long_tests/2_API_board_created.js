@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+describe('Board created trough API', ()=>{
+
 const board= 'HTTP-BOARD'
 
 beforeEach( () => {
@@ -25,3 +27,4 @@ beforeEach( () => {
       cy.get('.board')
       .should('have.length', '2')
   })
+ })

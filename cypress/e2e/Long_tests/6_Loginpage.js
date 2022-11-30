@@ -4,6 +4,8 @@
      const password = 'lukas'
 
 
+describe('Login page before open', ()=>{     
+
 beforeEach(() => {   
     
 cy.request({
@@ -30,4 +32,5 @@ it('Login page before open', () => {
     cy.get('[data-cy="logged-user"]')
      .should('contain.have.text', email)
 
+})
 })

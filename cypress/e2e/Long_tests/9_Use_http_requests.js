@@ -1,5 +1,8 @@
 /// <reference types="cypress" />
 
+
+describe('Created new list on new board trough Cypress.env', ()=>{     
+
 beforeEach( () => {
 
 
@@ -29,5 +32,6 @@ beforeEach( () => {
    cy.visit('/board/'+ Cypress.env('board')['id'])
   
   
-  })
+})
+})
  

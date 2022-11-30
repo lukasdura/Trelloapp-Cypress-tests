@@ -1,5 +1,8 @@
 /// <reference types="cypress" />
 
+describe('Prepare page for the next test case "DATA DRIVEN TESTING', ()=>{
+
+
 const lists = ['karol', 'peter', 'jano']
 
 
@@ -16,7 +19,7 @@ it('Prepare page for the next test case "DATA DRIVEN TESTING"',()=>{
    
    
     cy.get('.board_newItem')
-    .click()newboard
+    .click()
     
     cy.get('.board_addBoard')
      .click()
@@ -84,3 +87,4 @@ it('Prepare page for the next test case "DATA DRIVEN TESTING"',()=>{
       .type('1{enter}')
 
     })
+  })

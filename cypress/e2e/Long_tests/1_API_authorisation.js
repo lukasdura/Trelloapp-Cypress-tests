@@ -1,5 +1,10 @@
 /// <reference types="cypress" />
 
+
+describe('Check User ID and boards visibility trough User ID', ()=>{
+
+
+
 beforeEach(()=>{
 
   cy.request('DELETE', '/api/boards')
@@ -58,5 +63,6 @@ it('Check user id', () => {
     cy.visit('/')
     
     
+    })
     })
     })
