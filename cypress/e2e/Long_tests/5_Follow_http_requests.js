@@ -1,5 +1,10 @@
 /// <reference types="cypress" />
 
+const board = 'FOLOW HTTP'
+const list = 'HTTP LIST'
+const task = 'HTTP TASK'
+
+
 describe('Create task and follow  the request', ()=>{
 
 beforeEach( () => {
@@ -28,7 +33,9 @@ it('Create task and follow  the request',()=>{
   
   cy.get('.board_addBoard')
    .click()
-    .type('FOLOW HTTP{enter}')
+    .type(board)
+     .type('{enter}') 
+     
 
    
 
@@ -36,25 +43,28 @@ it('Create task and follow  the request',()=>{
    .click( )
      cy.get('.CreateList_input')
       .click()
-       .type('HTTP LIST{enter}')
+       .type(list)
+        .type('{enter}')
+       
      
     cy.get('.List_addTask')
      .click()
     
     cy.get('[data-id="newTaskTitle"]')
      .click()
-      .type('HTTP{enter}')
+      .type(task)
+        .type('{enter}')
      
     cy.wait('@createTask')
     .its('response.body.title')
-     .should('eq', 'HTTP')
+     .should('eq', task)
 
 
     cy.get('[data-cy="task-done"]')
      .check({force: true})
 
     cy.wait('@marktask').then(marking=>{
-     expect(marking.response.body.title).to.eq('HTTP')
+     expect(marking.response.body.title).to.eq(task)
       expect(marking.response.body.completed).to.eq(true )
     
 })

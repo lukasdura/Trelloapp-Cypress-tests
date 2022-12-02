@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+const board = 'TEST_board'
 
 describe('Created new list on new board trough Cypress.env', ()=>{     
 
@@ -8,7 +9,7 @@ beforeEach( () => {
 
     cy.request('DELETE', '/api/boards')
      cy.request('POST', '/api/boards',{
-       name:'TEST_board'
+       name: board
   
   
      }).then(board=>{

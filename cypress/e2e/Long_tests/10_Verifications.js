@@ -3,6 +3,7 @@
 describe('Create and check all tasks', ()=>{
 
 const tasks= ['1','2','3','4','5']
+const board = 'NEWBOARD'
 
 beforeEach( () => {
    
@@ -19,7 +20,8 @@ cy.request('DELETE', '/api/boards')
     .click()
      cy.get('.board_addBoard') 
       .click()
-       .type('NEWBOARD{enter}')
+       .type (board)
+        .type('{enter}')
         
     cy.get('.CreateList')
      .click()
