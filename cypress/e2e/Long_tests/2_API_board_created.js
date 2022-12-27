@@ -2,7 +2,7 @@
 
 describe('Board created trough API', ()=>{
 
-const board= 'HTTP-BOARD'
+var board= 'HTTP-BOARD'
 
 beforeEach( () => {
 
@@ -26,5 +26,9 @@ beforeEach( () => {
   
       cy.get('.board')
       .should('have.length', '2')
+
+
+      cy.url()
+      .should('eq','http://localhost:3000/');
   })
  })

@@ -3,7 +3,8 @@
 describe('Create and check all tasks', ()=>{
 
 const tasks= ['1','2','3','4','5']
-const board = 'NEWBOARD'
+var newlist = 'NEWLIST'
+var board = 'NEWBOARD'
 
 beforeEach( () => {
    
@@ -26,7 +27,8 @@ cy.request('DELETE', '/api/boards')
     cy.get('.CreateList')
      .click()
        cy.get('.CreateList_input')
-        .type('NEWLIST{enter}')  
+        .type(newlist)
+         .type('{enter}')  
    
     tasks.forEach(task=>{
     
@@ -53,6 +55,10 @@ cy.request('DELETE', '/api/boards')
         expect(task[3]).to.not.have.class('completed')
          expect(task[4]).to.not.have.class('completed')
    
+
+
+     cy.url()
+      .should('include', 'http://localhost:3000/board/')    
   })
   })
   })

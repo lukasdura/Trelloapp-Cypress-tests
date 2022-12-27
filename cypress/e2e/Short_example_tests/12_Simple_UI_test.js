@@ -1,7 +1,7 @@
 
 
- const board = 'NEWBOARD'
- const list  = 'NEWLIST'
+ var board = 'NEWBOARD'
+ var list  = 'NEWLIST'
  const tasks  = ['NEWTASK', 'NEWTASK1']
 
 

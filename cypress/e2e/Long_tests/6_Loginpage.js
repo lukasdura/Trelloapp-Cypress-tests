@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
      
-     const email= 'lukas@lukas.sk'
-     const password = 'lukas'
+     var email= 'lukas@lukas.sk'
+     var password = 'lukas'
 
 
 describe('Login page before open', ()=>{     

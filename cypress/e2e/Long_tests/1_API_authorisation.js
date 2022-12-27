@@ -1,16 +1,18 @@
 /// <reference types="cypress" />
 
+var newboard = 'firstboard'
+var userlogedboard = 'myboard'
 
 describe('Check User ID and boards visibility trough User ID', ()=>{
 
 
 
-beforeEach(()=>{
+beforeEach('one board created as logged in and one board created as not logged in',()=>{
 
   cy.request('DELETE', '/api/boards')
 
   cy.request ('POST', '/api/boards',{
-   name:'newboard'
+   name:newboard
  
   })
   cy.request({
@@ -18,7 +20,7 @@ beforeEach(()=>{
     method: 'POST',
      url:'api/boards',
       body:{
-       name:'myboard',
+       name:userlogedboard,
     },
     headers:{
       accept: 'application/json, text/plain, */*',
@@ -38,11 +40,11 @@ it('Check user id', () => {
     
     
     }}).then(board=>{
-     let newboard = Cypress._.find(board.body,{name:'newboard'})
-      expect(newboard.user).to.eq(0)
+     let newboards = Cypress._.find(board.body,{name:newboard})
+      expect(newboards.user).to.eq(0)
     
-    let myboard= Cypress._.find(board.body,{name:'myboard'})
-      expect(myboard.user).to.eq(1)
+    let myboards= Cypress._.find(board.body,{name:userlogedboard})
+      expect(myboards.user).to.eq(1)
     
        expect(board.body).have.length('2')
     
@@ -55,8 +57,8 @@ it('Check user id', () => {
           accept: 'application/json, text/plain, */*',
       
       } }).then(board=>{
-             let newboard = Cypress._.find(board.body,{name:'newboard'})
-               expect(newboard.user).to.eq(0)
+             let newboards = Cypress._.find(board.body,{name:newboard})
+               expect(newboards.user).to.eq(0)
                 expect(board.body).have.length('1')
       
     

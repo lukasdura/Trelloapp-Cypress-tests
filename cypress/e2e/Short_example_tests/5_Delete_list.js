@@ -1,7 +1,7 @@
 describe('Create board and list and check', ()=>{
  
-    const Create_board = 'new_board'
-    const Create_list = 'new_list'          
+    var Create_board = 'new_board'
+    var Create_list = 'new_list'          
     
     
     

@@ -30,7 +30,11 @@ beforeEach( () => {
           boardId:Cypress.env('board')['id']
        }})
     
-   cy.visit('/board/'+ Cypress.env('board')['id'])
+    cy.visit('/board/'+ Cypress.env('board')['id'])
+
+    
+    cy.url()
+     .should('include', 'http://localhost:3000/board/')
   
   
 })

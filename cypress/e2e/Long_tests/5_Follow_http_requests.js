@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
-const board = 'FOLOW HTTP'
-const list = 'HTTP LIST'
-const task = 'HTTP TASK'
+var board = 'FOLOW HTTP'
+var list = 'HTTP LIST'
+var task = 'HTTP TASK'
 
 
 describe('Create task and follow  the request', ()=>{
@@ -66,6 +66,10 @@ it('Create task and follow  the request',()=>{
     cy.wait('@marktask').then(marking=>{
      expect(marking.response.body.title).to.eq(task)
       expect(marking.response.body.completed).to.eq(true )
+
+
+    cy.url()
+    .should('include', 'http://localhost:3000/board/')  
     
 })
 })

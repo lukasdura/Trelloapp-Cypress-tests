@@ -1,7 +1,7 @@
 describe('Create board and list and check', ()=>{
  
-const Create_board = 'new_board'
-const Create_list = 'new_list'          
+var Create_board = 'new_board'
+var Create_list = 'new_list'          
 
 
 
@@ -29,6 +29,9 @@ cy.get('.CreateList_title')
 
 cy.get('[data-cy="list-name"]')
  .should('have.value', Create_list)
+
+ cy.url()
+ .should('include', 'http://localhost:3000/board/')
 
 })
 })

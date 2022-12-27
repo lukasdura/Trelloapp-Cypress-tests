@@ -8,6 +8,8 @@ it('', ()=>{
       .should('contain.text', 'Create a board')
        .should('be.visible')
         .should('have.length.at.least',1)
+    cy.url()
+     .should('eq', 'http://localhost:3000/')    
     
 })
 })

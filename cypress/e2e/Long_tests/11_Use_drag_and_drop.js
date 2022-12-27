@@ -1,6 +1,6 @@
 describe('use drag and drop plugin', ()=>{
 
- const lists = ['first_board', 'second_board',]
+ const lists = ['first_list', 'second_list',]
 
 
 it('Prepare enviroment for use drag and drop',()=>{

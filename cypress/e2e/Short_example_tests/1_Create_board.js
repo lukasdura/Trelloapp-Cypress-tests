@@ -2,7 +2,7 @@ describe('Create board and check', ()=>{
  
 
   
-const Create_board = 'new_board'
+var Create_board = 'new_board'
       
     it('', ()=>{
     
@@ -18,6 +18,8 @@ const Create_board = 'new_board'
          .should('have.value', Create_board)
            .should('be.visible')
             .should('have.length',1)
+        cy.url()
+        .should('include', 'http://localhost:3000/board/')    
         
     })
     })

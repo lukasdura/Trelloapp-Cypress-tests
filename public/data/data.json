@@ -3,100 +3,31 @@
     {
       "name": "NEWBOARD",
       "user": 0,
-      "id": 49426049158,
-      "starred": true,
-      "created": "2022-12-02"
-    },
-    {
-      "name": "new_board",
-      "user": 0,
-      "id": 8687504626,
+      "id": 63903719692,
       "starred": false,
-      "created": "2022-12-02"
-    },
-    {
-      "name": "new_board",
-      "user": 0,
-      "id": 55267491396,
-      "starred": false,
-      "created": "2022-12-02"
-    },
-    {
-      "name": "new_board",
-      "user": 0,
-      "id": 83592400936,
-      "starred": false,
-      "created": "2022-12-02"
-    },
-    {
-      "name": "new_board",
-      "user": 0,
-      "id": 21791343897,
-      "starred": false,
-      "created": "2022-12-02"
-    },
-    {
-      "name": "new_board",
-      "user": 0,
-      "id": 3559142019,
-      "starred": false,
-      "created": "2022-12-02"
-    },
-    {
-      "name": "new_board",
-      "user": 0,
-      "id": 10824638094,
-      "starred": false,
-      "created": "2022-12-02"
-    },
-    {
-      "name": "new_board",
-      "user": 0,
-      "id": 58906497901,
-      "starred": false,
-      "created": "2022-12-02"
+      "created": "2022-12-27"
     }
   ],
   "tasks": [
     {
-      "boardId": 49426049158,
+      "boardId": 63903719692,
       "description": "",
       "completed": true,
-      "listId": 59573971096,
+      "listId": 20553042835,
       "title": "NEWTASK",
-      "id": 9071523089,
-      "created": "2022-12-02",
-      "deadline": "2022-12-05"
+      "id": 16904877111,
+      "created": "2022-12-27",
+      "deadline": "2022-12-30"
     },
     {
-      "boardId": 49426049158,
+      "boardId": 63903719692,
       "description": "",
       "completed": false,
-      "listId": 59573971096,
+      "listId": 20553042835,
       "title": "NEWTASK1",
-      "id": 11168371641,
-      "created": "2022-12-02",
-      "deadline": "2022-12-05"
-    },
-    {
-      "boardId": 3559142019,
-      "description": "",
-      "completed": false,
-      "listId": 84748909007,
-      "title": "new_task",
-      "id": 59474394187,
-      "created": "2022-12-02",
-      "deadline": "2022-12-05"
-    },
-    {
-      "boardId": 58906497901,
-      "description": "",
-      "completed": true,
-      "listId": 63897090841,
-      "title": "new_task",
-      "id": 33885960595,
-      "created": "2022-12-02",
-      "deadline": "2022-12-05"
+      "id": 59333635232,
+      "created": "2022-12-27",
+      "deadline": "2022-12-30"
     }
   ],
   "users": [
@@ -164,38 +95,24 @@
       "email": "lukas12@lukas.sk",
       "password": "$2a$10$8dA8o0.uWQk/5nHFJbYv7eezs/9f6xx8tfd.Qp/QFaeAQnTGNs35K",
       "id": 13
+    },
+    {
+      "email": "lukas13@lukas.sk",
+      "password": "$2a$10$ySEnhUDm7BIxAAqk1suxq.KoWw8Po2.c6nIhc5cKy8rHj.bIk012S",
+      "id": 14
+    },
+    {
+      "email": "lukas14@lukas.sk",
+      "password": "$2a$10$Oxhl6KOZOpW6YJGt0kjPEOfA4W/CmEyLo55LCXtJ5nMNoO7EPlC7S",
+      "id": 15
     }
   ],
   "lists": [
     {
-      "boardId": 49426049158,
+      "boardId": 63903719692,
       "title": "NEWLIST",
-      "id": 59573971096,
-      "created": "2022-12-02"
-    },
-    {
-      "boardId": 83592400936,
-      "title": "new_list",
-      "id": 58539746450,
-      "created": "2022-12-02"
-    },
-    {
-      "boardId": 3559142019,
-      "title": "new_list",
-      "id": 84748909007,
-      "created": "2022-12-02"
-    },
-    {
-      "boardId": 10824638094,
-      "title": "new_list",
-      "id": 67469677005,
-      "created": "2022-12-02"
-    },
-    {
-      "boardId": 58906497901,
-      "title": "new_list",
-      "id": 63897090841,
-      "created": "2022-12-02"
+      "id": 20553042835,
+      "created": "2022-12-27"
     }
   ]
 }

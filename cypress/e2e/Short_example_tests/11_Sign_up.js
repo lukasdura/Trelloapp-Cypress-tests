@@ -1,5 +1,5 @@
-const email    = 'lukas12@lukas.sk'
-const password = 'lukas'
+var email    = 'lukas15@lukas.sk'
+var password = 'lukas'
 
 
 describe('Try to Sign up with UI to page and sent welcome mail', ()=>{

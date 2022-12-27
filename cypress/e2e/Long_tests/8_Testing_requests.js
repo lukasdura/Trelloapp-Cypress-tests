@@ -3,7 +3,7 @@
 
 describe('Testing requests', ()=>{     
 
-const tasks = ['peter', 'karol', 'juraj', 'ondrej']
+var tasks = ['peter', 'karol', 'juraj', 'ondrej']
 
  beforeEach( () => {
 
