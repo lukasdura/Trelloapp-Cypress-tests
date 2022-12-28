@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+
+
 describe('Create and check all tasks', ()=>{
 
 const tasks= ['1','2','3','4','5']
@@ -55,7 +57,6 @@ cy.request('DELETE', '/api/boards')
         expect(task[3]).to.not.have.class('completed')
          expect(task[4]).to.not.have.class('completed')
    
-
 
      cy.url()
       .should('include', 'http://localhost:3000/board/')    

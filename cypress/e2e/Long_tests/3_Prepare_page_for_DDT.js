@@ -2,9 +2,11 @@
 
 describe('Prepare page for the next test case "DATA DRIVEN TESTING', ()=>{
 
-
+var newboard = 'Prepare Data driven testing'
 const lists = ['karol', 'peter', 'jano']
-
+const task1 = ['1', '2', '3']
+const task2 = ['1', '2']
+const task3 = ['1']
 
 
 beforeEach( () => {
@@ -23,7 +25,8 @@ it('Prepare page for the next test case "DATA DRIVEN TESTING"',()=>{
     
     cy.get('.board_addBoard')
      .click()
-      .type('Prepare Data driven testing{enter}')
+      .type(newboard) 
+       .type('{enter}')
     
     lists.forEach(list=>{
     
@@ -36,13 +39,7 @@ it('Prepare page for the next test case "DATA DRIVEN TESTING"',()=>{
     
     })
 
-    cy.get('.List_addTask')
-     .eq(0)
-      .click()
-
-    cy.get('[data-id="newTaskTitle"]')
-     .eq(0)
-      .type('1{enter}')
+    task1.forEach(task=>{
 
     cy.get('.List_addTask')
      .eq(0)
@@ -50,41 +47,34 @@ it('Prepare page for the next test case "DATA DRIVEN TESTING"',()=>{
 
     cy.get('[data-id="newTaskTitle"]')
      .eq(0)
-      .type('2{enter}')
-
-    cy.get('.List_addTask')
-     .eq(0)
-      .click()
-  
-    cy.get('[data-id="newTaskTitle"]')
-     .eq(0)
-      .type('3{enter}')
-
-
-
-    cy.get('.List_addTask')
-     .eq(1)
-      .click()
-
-    cy.get('[data-id="newTaskTitle"]')
-     .eq(1)
-      .type('1{enter}')
-
-    cy.get('.List_addTask')
-     .eq(1)
-      .click()
-
-    cy.get('[data-id="newTaskTitle"]')
-     .eq(1)
-      .type('2{enter}')
-
-    cy.get('.List_addTask')
-     .eq(2)
-      .click()
-
-    cy.get('[data-id="newTaskTitle"]')
-     .eq(2)
-      .type('1{enter}')
+      .type(task)
+       .type('{enter}')
 
     })
-  })
+    
+    task2.forEach(task=>{
+
+    cy.get('.List_addTask')
+     .eq(1)
+      .click()
+
+    cy.get('[data-id="newTaskTitle"]')
+     .eq(1)
+      .type(task)
+        .type('{enter}')
+
+    })
+
+    task3.forEach(task=>{
+
+    cy.get('.List_addTask')
+     .eq(2)
+      .click()
+
+    cy.get('[data-id="newTaskTitle"]')
+     .eq(2)
+      .type(task)
+       .type('{enter}')
+    })
+    })
+    })
