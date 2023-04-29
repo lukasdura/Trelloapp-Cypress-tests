@@ -66,7 +66,7 @@ beforeEach(()=>{
      .eq(1)
       .should('not.be.checked')
  
-     //checking the name of board//
+     //checking the name of boards//
  
      cy.get('.boardDetail_title')
      .should('have.value', board)
